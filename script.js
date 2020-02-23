@@ -47,19 +47,14 @@ function copyWithModify(user, name, age) {
     var userWithModify = {};
     for (var key in user) {
         userWithModify[key] = user[key];
+        if (key === 'name') {
+            userWithModify[key] = name;
+        }
+        if (key === 'age') {
+            userWithModify[key] = age; 
+        }
     }
     return userWithModify;
 }
 
-console.log(copyWithModify(user, user.name = 'Max', user.age = 20));
-
-//  Или так:
-var userCopy = {
-    name: 'Max',
-    age: 20,
-}
-
-var userWithModify = Object.assign(user, userCopy);
-console.log(userWithModify);
-
-
+console.log(copyWithModify(user, 'Max', 20));
