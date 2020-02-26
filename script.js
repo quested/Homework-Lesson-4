@@ -5,15 +5,17 @@ var user = {
     eyesColor: 'green',
     isAdmin: false,
     role: 2,
-}
+};
 
 function copy(user) {
     var newUser = {};
+
     for (var key in user) {
         newUser[key] = user[key];
     }
+
     return newUser;
-}
+};
 
 var newUser = copy(user);
 console.log(copy(user));
@@ -27,7 +29,7 @@ var oneMoreUser = {
     eyesColor: 'green',
     isAdmin: false,
     role: 2,
-}
+};
 
 function isEquil(user, oneMoreUser) {
     for (var key in user) {
@@ -35,8 +37,9 @@ function isEquil(user, oneMoreUser) {
             return false;
         }
     }
+
     return true;
-}
+};
 
 console.log(isEquil(user, oneMoreUser));
 
@@ -45,6 +48,7 @@ console.log(isEquil(user, oneMoreUser));
 // Задача 3
 function copyWithModify(user, name, age) {
     var userWithModify = {};
+
     for (var key in user) {
         userWithModify[key] = user[key];
         if (key === 'name') {
@@ -54,7 +58,8 @@ function copyWithModify(user, name, age) {
             userWithModify[key] = age; 
         }
     }
+    
     return userWithModify;
-}
+};
 
 console.log(copyWithModify(user, 'Max', 20));
